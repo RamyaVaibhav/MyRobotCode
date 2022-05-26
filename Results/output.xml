@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.6.5 on win32)" generated="20220525 23:13:57.152" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon" source="C:\Development\robot-scripts\First_script\tests\Amazon.robot">
+<test id="s1-t1" name="User must be able to purchase an item" line="13">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220525 23:13:57.310" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg timestamp="20220525 23:13:57.421" level="DEBUG">POST http://127.0.0.1:50378/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
+<msg timestamp="20220525 23:13:57.421" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:50378</msg>
+<msg timestamp="20220525 23:13:58.124" level="DEBUG">http://127.0.0.1:50378 "POST /session HTTP/1.1" 200 789</msg>
+<msg timestamp="20220525 23:13:58.130" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:13:58.132" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/timeouts {"script": 5000}</msg>
+<msg timestamp="20220525 23:13:58.135" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:13:58.136" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:13:58.136" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/timeouts {"implicit": 0}</msg>
+<msg timestamp="20220525 23:13:58.137" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:13:58.137" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:13:58.137" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/url {"url": "about:blank"}</msg>
+<msg timestamp="20220525 23:13:58.167" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:13:58.168" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:13:58.168" level="DEBUG">Opened browser with session id edcb3e512d895661c8d8776ef2d488a0.</msg>
+<status status="PASS" starttime="20220525 23:13:57.310" endtime="20220525 23:13:58.168"/>
+</kw>
+<status status="PASS" starttime="20220525 23:13:57.310" endtime="20220525 23:13:58.168"/>
+</kw>
+<kw name="Landed the login page" library="Amazon.app">
+<kw name="Load the Page" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220525 23:13:58.170" level="INFO">Opening url 'https://www.amazon.com/'</msg>
+<msg timestamp="20220525 23:13:58.170" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/url {"url": "https://www.amazon.com/"}</msg>
+<msg timestamp="20220525 23:14:00.140" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:00.141" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:13:58.170" endtime="20220525 23:14:00.141"/>
+</kw>
+<status status="PASS" starttime="20220525 23:13:58.170" endtime="20220525 23:14:00.141"/>
+</kw>
+<kw name="Dismiss Delivery disclaimer" library="LandingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//input[@data-action-type='DISMISS']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:00.143" level="INFO">Clicking button 'xpath=//input[@data-action-type='DISMISS']'.</msg>
+<msg timestamp="20220525 23:14:00.144" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//input[@data-action-type='DISMISS']"}</msg>
+<msg timestamp="20220525 23:14:00.181" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:00.181" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.181" level="DEBUG">GET http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/7dbf11c6-f80b-401c-a27c-96f7bfe53507/name {"id": "7dbf11c6-f80b-401c-a27c-96f7bfe53507"}</msg>
+<msg timestamp="20220525 23:14:00.196" level="DEBUG">http://127.0.0.1:50378 "GET /session/edcb3e512d895661c8d8776ef2d488a0/element/7dbf11c6-f80b-401c-a27c-96f7bfe53507/name HTTP/1.1" 200 17</msg>
+<msg timestamp="20220525 23:14:00.196" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.199" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/7dbf11c6-f80b-401c-a27c-96f7bfe53507/click {"id": "7dbf11c6-f80b-401c-a27c-96f7bfe53507"}</msg>
+<msg timestamp="20220525 23:14:00.284" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/7dbf11c6-f80b-401c-a27c-96f7bfe53507/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:00.284" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:00.141" endtime="20220525 23:14:00.284"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:00.141" endtime="20220525 23:14:00.284"/>
+</kw>
+<kw name="Validate Page title" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Amazon</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220525 23:14:00.284" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//*[contains(., 'Amazon')]"}</msg>
+<msg timestamp="20220525 23:14:00.310" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 7358</msg>
+<msg timestamp="20220525 23:14:00.318" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:00.284" endtime="20220525 23:14:00.319"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:00.284" endtime="20220525 23:14:00.319"/>
+</kw>
+<status status="PASS" starttime="20220525 23:13:58.169" endtime="20220525 23:14:00.319"/>
+</kw>
+<kw name="Search for the product" library="Amazon.app">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=twotabsearchtextbox</arg>
+<arg>${SEARCH TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:00.320" level="INFO">Typing text 'samsung watch pink gold' into text field 'id=twotabsearchtextbox'.</msg>
+<msg timestamp="20220525 23:14:00.320" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "css selector", "value": "[id=\"twotabsearchtextbox\"]"}</msg>
+<msg timestamp="20220525 23:14:00.328" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:00.331" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.332" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/2ede38fd-ea30-4ec4-96f2-5176a74f38c8/clear {"id": "2ede38fd-ea30-4ec4-96f2-5176a74f38c8"}</msg>
+<msg timestamp="20220525 23:14:00.372" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/2ede38fd-ea30-4ec4-96f2-5176a74f38c8/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:00.373" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.373" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/2ede38fd-ea30-4ec4-96f2-5176a74f38c8/value {"text": "samsung watch pink gold", "value": ["s", "a", "m", "s", "u", "n", "g", " ", "w", "a", "t", "c", "h", " ", "p", "i", "n", "k", " ", "g", "o", "l", "d"], "id": "2ede38fd-ea30-4ec4-96f2-5176a74f38c8"}</msg>
+<msg timestamp="20220525 23:14:00.617" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/2ede38fd-ea30-4ec4-96f2-5176a74f38c8/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:00.617" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:00.320" endtime="20220525 23:14:00.617"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:00.320" endtime="20220525 23:14:00.617"/>
+</kw>
+<kw name="Click Search Button" library="TopNav">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=nav-search-submit-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:00.619" level="INFO">Clicking button 'id=nav-search-submit-button'.</msg>
+<msg timestamp="20220525 23:14:00.620" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "css selector", "value": "[id=\"nav-search-submit-button\"]"}</msg>
+<msg timestamp="20220525 23:14:00.728" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:00.728" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.728" level="DEBUG">GET http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5/name {"id": "9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5"}</msg>
+<msg timestamp="20220525 23:14:00.737" level="DEBUG">http://127.0.0.1:50378 "GET /session/edcb3e512d895661c8d8776ef2d488a0/element/9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5/name HTTP/1.1" 200 17</msg>
+<msg timestamp="20220525 23:14:00.737" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:00.737" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5/click {"id": "9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5"}</msg>
+<msg timestamp="20220525 23:14:02.866" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/9e12cd19-f246-4fd7-8d1f-6cc476b2a8b5/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:02.866" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:00.619" endtime="20220525 23:14:02.866"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:00.618" endtime="20220525 23:14:02.866"/>
+</kw>
+<kw name="Load search term" library="SearchProduct">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${SEARCH TERM}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220525 23:14:02.866" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//*[contains(., 'samsung watch pink gold')]"}</msg>
+<msg timestamp="20220525 23:14:02.890" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 1196</msg>
+<msg timestamp="20220525 23:14:02.890" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:02.866" endtime="20220525 23:14:02.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220525 23:14:05.896" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220525 23:14:02.890" endtime="20220525 23:14:05.896"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:02.866" endtime="20220525 23:14:05.896"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:00.320" endtime="20220525 23:14:05.896"/>
+</kw>
+<kw name="Select the right product" library="Amazon.app">
+<kw name="Search the product" library="SearchProduct">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>css=div[class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_3'] span[class='a-size-medium a-color-base a-text-normal']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<msg timestamp="20220525 23:14:05.896" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "css selector", "value": "div[class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_3'] span[class='a-size-medium a-color-base a-text-normal']"}</msg>
+<msg timestamp="20220525 23:14:05.937" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:05.938" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:05.938" level="DEBUG">Workaround for Selenium 3 bug.</msg>
+<msg timestamp="20220525 23:14:05.938" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "e19f18d2-372a-40b3-8878-3f20a5c19f4b"}}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}]}]}</msg>
+<msg timestamp="20220525 23:14:06.235" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:06.236" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:05.896" endtime="20220525 23:14:06.236"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:05.896" endtime="20220525 23:14:06.236"/>
+</kw>
+<kw name="Click the product" library="SearchProduct">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Link=Galaxy Watch 4 40mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection LTE US Version, Pink Gold</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:06.237" level="INFO">Clicking link 'Link=Galaxy Watch 4 40mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection LTE US Version, Pink Gold'.</msg>
+<msg timestamp="20220525 23:14:06.237" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "link text", "value": "Galaxy Watch 4 40mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection LTE US Version, Pink Gold"}</msg>
+<msg timestamp="20220525 23:14:06.458" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:06.458" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:06.458" level="DEBUG">GET http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/3cba82ae-9b3a-42f9-9283-4a95d79d75ee/name {"id": "3cba82ae-9b3a-42f9-9283-4a95d79d75ee"}</msg>
+<msg timestamp="20220525 23:14:06.466" level="DEBUG">http://127.0.0.1:50378 "GET /session/edcb3e512d895661c8d8776ef2d488a0/element/3cba82ae-9b3a-42f9-9283-4a95d79d75ee/name HTTP/1.1" 200 13</msg>
+<msg timestamp="20220525 23:14:06.467" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:06.467" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/3cba82ae-9b3a-42f9-9283-4a95d79d75ee/click {"id": "3cba82ae-9b3a-42f9-9283-4a95d79d75ee"}</msg>
+<msg timestamp="20220525 23:14:10.804" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/3cba82ae-9b3a-42f9-9283-4a95d79d75ee/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:10.805" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:06.237" endtime="20220525 23:14:10.805"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:06.237" endtime="20220525 23:14:10.805"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:05.896" endtime="20220525 23:14:10.805"/>
+</kw>
+<kw name="Add product to the cart" library="Amazon.app">
+<kw name="Load the product" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Galaxy Watch 4 40mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection LTE US Version, Pink Gold</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220525 23:14:10.805" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//*[contains(., 'Galaxy Watch 4 40mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection LTE US Version, Pink Gold')]"}</msg>
+<msg timestamp="20220525 23:14:10.913" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 5067</msg>
+<msg timestamp="20220525 23:14:10.913" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:10.805" endtime="20220525 23:14:10.913"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:10.805" endtime="20220525 23:14:10.913"/>
+</kw>
+<kw name="Add product to Cart" library="Product">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//input[@id='add-to-cart-button']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:10.913" level="INFO">Clicking button 'xpath=//input[@id='add-to-cart-button']'.</msg>
+<msg timestamp="20220525 23:14:10.913" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//input[@id='add-to-cart-button']"}</msg>
+<msg timestamp="20220525 23:14:11.016" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:11.016" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:11.016" level="DEBUG">GET http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/2c7f9892-9716-45e1-9cd4-021731fd6785/name {"id": "2c7f9892-9716-45e1-9cd4-021731fd6785"}</msg>
+<msg timestamp="20220525 23:14:11.037" level="DEBUG">http://127.0.0.1:50378 "GET /session/edcb3e512d895661c8d8776ef2d488a0/element/2c7f9892-9716-45e1-9cd4-021731fd6785/name HTTP/1.1" 200 17</msg>
+<msg timestamp="20220525 23:14:11.037" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:11.037" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/2c7f9892-9716-45e1-9cd4-021731fd6785/click {"id": "2c7f9892-9716-45e1-9cd4-021731fd6785"}</msg>
+<msg timestamp="20220525 23:14:14.588" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/2c7f9892-9716-45e1-9cd4-021731fd6785/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:14.588" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:10.913" endtime="20220525 23:14:14.588"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:10.913" endtime="20220525 23:14:14.588"/>
+</kw>
+<kw name="Validate the cart" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Added to Cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220525 23:14:14.594" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//*[contains(., 'Added to Cart')]"}</msg>
+<msg timestamp="20220525 23:14:14.644" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 801</msg>
+<msg timestamp="20220525 23:14:14.644" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:14.588" endtime="20220525 23:14:14.645"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:14.588" endtime="20220525 23:14:14.646"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:10.805" endtime="20220525 23:14:14.646"/>
+</kw>
+<kw name="Proceed to checkout" library="Amazon.app">
+<kw name="Proceed to checkout" library="Cart">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=proceedToRetailCheckout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220525 23:14:14.651" level="INFO">Clicking button 'name=proceedToRetailCheckout'.</msg>
+<msg timestamp="20220525 23:14:14.651" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "css selector", "value": "[name=\"proceedToRetailCheckout\"]"}</msg>
+<msg timestamp="20220525 23:14:14.729" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20220525 23:14:14.730" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:14.731" level="DEBUG">GET http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/9cc01502-bba9-41fc-8cf8-29cf223f9869/name {"id": "9cc01502-bba9-41fc-8cf8-29cf223f9869"}</msg>
+<msg timestamp="20220525 23:14:14.767" level="DEBUG">http://127.0.0.1:50378 "GET /session/edcb3e512d895661c8d8776ef2d488a0/element/9cc01502-bba9-41fc-8cf8-29cf223f9869/name HTTP/1.1" 200 17</msg>
+<msg timestamp="20220525 23:14:14.767" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220525 23:14:14.767" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/element/9cc01502-bba9-41fc-8cf8-29cf223f9869/click {"id": "9cc01502-bba9-41fc-8cf8-29cf223f9869"}</msg>
+<msg timestamp="20220525 23:14:15.948" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/element/9cc01502-bba9-41fc-8cf8-29cf223f9869/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:15.948" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:14.650" endtime="20220525 23:14:15.948"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:14.646" endtime="20220525 23:14:15.948"/>
+</kw>
+<kw name="Product is checked out" library="Cart">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Sign-In</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220525 23:14:15.948" level="DEBUG">POST http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0/elements {"using": "xpath", "value": "//*[contains(., 'Sign-In')]"}</msg>
+<msg timestamp="20220525 23:14:15.970" level="DEBUG">http://127.0.0.1:50378 "POST /session/edcb3e512d895661c8d8776ef2d488a0/elements HTTP/1.1" 200 1591</msg>
+<msg timestamp="20220525 23:14:15.970" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:15.948" endtime="20220525 23:14:15.970"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:15.948" endtime="20220525 23:14:15.970"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:14.646" endtime="20220525 23:14:15.970"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220525 23:14:15.979" level="DEBUG">Closing browser with session id edcb3e512d895661c8d8776ef2d488a0.</msg>
+<msg timestamp="20220525 23:14:15.979" level="DEBUG">DELETE http://127.0.0.1:50378/session/edcb3e512d895661c8d8776ef2d488a0 {}</msg>
+<msg timestamp="20220525 23:14:16.109" level="DEBUG">http://127.0.0.1:50378 "DELETE /session/edcb3e512d895661c8d8776ef2d488a0 HTTP/1.1" 200 14</msg>
+<msg timestamp="20220525 23:14:16.109" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220525 23:14:15.979" endtime="20220525 23:14:18.328"/>
+</kw>
+<status status="PASS" starttime="20220525 23:14:15.979" endtime="20220525 23:14:18.328"/>
+</kw>
+<doc>This is the first test Case</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220525 23:13:57.310" endtime="20220525 23:14:18.329"/>
+</test>
+<doc>This is the first test suite</doc>
+<status status="PASS" starttime="20220525 23:13:57.152" endtime="20220525 23:14:18.331"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
